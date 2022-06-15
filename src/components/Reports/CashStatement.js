@@ -44,7 +44,7 @@ const CashStatement = () => {
             today.setDate(today.getDate()-1)
             const yesterday = format(today, "yyyy-MM-dd");
 
-        const url3=`http://localhost:5000/yesterdaycash?date=${yesterday}`
+        const url3=`https://infinite-anchorage-69144.herokuapp.com/yesterdaycash?date=${yesterday}`
         console.log(url3);
         fetch(url3)
         .then(res=> res.json())
@@ -73,7 +73,7 @@ const CashStatement = () => {
         const cash= parseInt(lastCash);
         const closingBalance= {date, cash};
 
-        fetch(`http://localhost:5000/handcash?date=${date}`, {
+        fetch(`https://infinite-anchorage-69144.herokuapp.com/handcash?date=${date}`, {
             method: 'PUT',
             headers:{
                 'content-type': 'application/json'

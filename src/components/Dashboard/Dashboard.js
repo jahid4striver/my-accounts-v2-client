@@ -11,7 +11,7 @@ const Dashboard = () => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-68 text-base-content mt-px bg-red-200">
+                <ul class="menu p-4 overflow-y-auto w-80 text-base-content mt-px bg-red-200">
 
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addexpense'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Expenses</Link></li>
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addcheque'><img className='h-8' src="https://www.svgrepo.com/show/86220/check.svg" alt="" /> Add Cheques</Link></li>
