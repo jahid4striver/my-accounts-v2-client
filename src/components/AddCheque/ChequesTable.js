@@ -40,8 +40,8 @@ const ChequesTable = ({cheque, setUpdateCheque, index}) => {
             <td>{depositbank}</td>
             <td>{depositaccount}</td>
             <td>User</td>
-            <td><label for="update-cheque-modal" onClick={()=>setUpdateCheque(cheque)} className='btn btn-primary'>Edit</label></td>
-            <td><button onClick={handleDeleteCheque} className='btn btn-warning'>Delete</button></td>
+            <td><label for="update-cheque-modal" onClick={()=>setUpdateCheque(cheque)} className='btn btn-xs btn-primary'>Edit</label></td>
+            <td><button onClick={handleDeleteCheque} className='btn btn-warning btn-xs'>Delete</button></td>
         </tr>
     );
 };

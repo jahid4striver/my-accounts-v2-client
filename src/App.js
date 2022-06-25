@@ -16,6 +16,8 @@ import Home from "./components/Home/Home/Home";
 import AllExpenses from "./components/Reports/AllExpenses";
 import CashStatement from "./components/Reports/CashStatement";
 import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
+import ChequeReport from "./components/Reports/ChequeReport";
+import IncomeExpense from "./components/Reports/IncomeExpense";
 import Navbar from "./components/Shared/Navbar";
 
 
@@ -39,6 +41,8 @@ function App() {
           <Route path="categorywisereport" element={<CategoryWiseReport />}></Route>
           <Route path="addloan" element={<AddLoanAccount />}></Route>
           <Route path="cashstatement" element={<CashStatement />}></Route>
+          <Route path="incomeexpense" element={<IncomeExpense />}></Route>
+          <Route path="chequereport" element={<ChequeReport />}></Route>
         </Route>
       </Routes>
 

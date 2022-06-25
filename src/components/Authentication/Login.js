@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from './firebase.init';
+import login from '../../assets/images/login.jpeg'
 
 
 const Login = () => {
@@ -25,10 +26,10 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='mt-20'>
             <div className='container mx-auto'>
                 <form onSubmit={handleSignIn} className=' w-10/12 lg:w-96 mx-auto mt-8 shadow-xl rounded-lg p-4 flex flex-col justify-center items-center'>
-                    <img className='w-80' src="https://thumbs.dreamstime.com/b/login-banner-18483762.jpg" alt="" />
+                    <img className='w-80' src={login} alt="" />
                     <p className='text-sm bg-red-400 p-2 rounded-lg text-white'>Email: admin@myaccounts.com pass: 123456</p>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
