@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 import auth from './firebase.init';
 
 const PrivateRoute = ({ children }) => {
@@ -8,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if(loading){
-        return <progress class="progress w-56"></progress>
+        return <Loading></Loading>
     }
 
     if (!user) {

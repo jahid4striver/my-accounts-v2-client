@@ -36,7 +36,7 @@ const IncomeExpense = () => {
 
         const category = e.target.category.value;
         const subcategory = e.target.subcategory.value;
-        const url = `http://localhost:5000/categorywiseexpense?category=${category}&subcategory=${subcategory}`
+        const url = `https://infinite-anchorage-69144.herokuapp.com/categorywiseexpense?category=${category}&subcategory=${subcategory}`
 
         fetch(url)
             .then(res => res.json())
@@ -45,7 +45,7 @@ const IncomeExpense = () => {
                 setFilteredExpense(data)
                 setIsLoaded(true)
             })
-        const url2 = `http://localhost:5000/incomeamount?chequecategory=${category}&chequesubcategory=${subcategory}`
+        const url2 = `https://infinite-anchorage-69144.herokuapp.com/incomeamount?chequecategory=${category}&chequesubcategory=${subcategory}`
 
         fetch(url2)
             .then(res => res.json())
@@ -99,7 +99,7 @@ const IncomeExpense = () => {
     // })
     // console.log();
 
-    // const url2= `http://localhost:5000/expenseamount?category=${category}$subcategory=${subcategory}`
+    // const url2= `https://infinite-anchorage-69144.herokuapp.com/expenseamount?category=${category}$subcategory=${subcategory}`
 
 
 
