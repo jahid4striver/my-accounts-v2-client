@@ -18,10 +18,10 @@ const Navbar = () => {
                 <Link to='/' class="btn btn-ghost text-xl uppercase font-bold mr-36">My Accounts</Link>
             </div>
             <div class="flex-none">
-                <div class="dropdown dropdown-end">
-
+                <div class="dropdown dropdown-end indicator">
+                        <Link style={{marginLeft:'-40px'}} className='font-bold' to='/myexpense'>My Expenses<span class="badge badge-sm indicator-item">8 New</span></Link>
                 </div>
-                <div class="dropdown dropdown-end">
+                <div class="dropdown dropdown-end ml-8">
                     <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full">
                             <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt='user' />
@@ -35,7 +35,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li>{user && <button onClick={()=>signOut(auth)}>Logout</button>}</li>
+                        <li>{user && <button onClick={() => signOut(auth)}>Logout</button>}</li>
                     </ul>
                 </div>
             </div>

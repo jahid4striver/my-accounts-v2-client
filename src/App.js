@@ -13,6 +13,7 @@ import Login from "./components/Authentication/Login";
 import PrivateRoute from "./components/Authentication/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
+import MyExpenses from "./components/MyAccounts/MyExpenses";
 import AllExpenses from "./components/Reports/AllExpenses";
 import CashStatement from "./components/Reports/CashStatement";
 import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
@@ -28,6 +29,7 @@ function App() {
 
       <Routes>
         <Route path="/login" element={<Login />}></Route>
+        {/* <Route path="/myexpense" element={<MyExpenses />}></Route> */}
         <Route path="/" element={<PrivateRoute><Dashboard/></PrivateRoute>}>
           <Route index element={<Home />}></Route>
           <Route path="addexpense" element={<AddExpense />}></Route>
@@ -43,6 +45,7 @@ function App() {
           <Route path="cashstatement" element={<CashStatement />}></Route>
           <Route path="incomeexpense" element={<IncomeExpense />}></Route>
           <Route path="chequereport" element={<ChequeReport />}></Route>
+          <Route path="myexpenses" element={<MyExpenses />}></Route>
         </Route>
       </Routes>
 
