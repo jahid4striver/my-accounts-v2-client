@@ -37,6 +37,7 @@ const Dashboard = () => {
                         </div>
                         <div class="collapse-content">
                             <li><Link to='/cashstatement'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Daily Cash Statement</Link></li>
+                            <li><Link to='/currentbalance'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Current Balance</Link></li>
                             <li className='mt-2'><Link to='/allexpenses'><img className='h-8' src='https://www.svgrepo.com/show/32881/cash.svg' alt="" /> All Expenses</Link></li>
                             <li className='mt-2'><Link to='/chequereport'><img className='h-8' src='https://www.svgrepo.com/show/32881/cash.svg' alt="" />Category Wise Cheques</Link></li>
                             <li><Link to='/categorywisereport'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Category Wise Expense</Link></li>

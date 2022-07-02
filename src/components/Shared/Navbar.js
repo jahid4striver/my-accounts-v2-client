@@ -1,11 +1,33 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../Authentication/firebase.init';
 
 const Navbar = () => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
+
+    // const [myExpenses, setMyExpenses] = useState([]);
+   
+
+    // if (user?.email == 'hameem@myaccounts.com') {
+    //     fetch(`https://infinite-anchorage-69144.herokuapp.com/myexpenses?category=Construction&subcategory=Hameem`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setMyExpenses(data)
+    //         })
+    // }
+    // if (user?.email == 'owner@myaccounts.com') {
+    //     fetch(`https://infinite-anchorage-69144.herokuapp.com/ownerexpenses?category=Personal`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setMyExpenses(data)
+    //         })
+    // }
+
+
+    // const myNewExpenses= myExpenses.filter(expense=> !expense.status);
+
 
     return (
         <div class={`navbar shadow-xl h-20 ${!user && 'hidden'} bg-red-300`}>
@@ -19,7 +41,7 @@ const Navbar = () => {
             </div>
             <div class="flex-none">
                 <div class="dropdown dropdown-end indicator">
-                        <Link style={{marginLeft:'-40px'}} className='font-bold' to='/myexpense'>My Expenses<span class="badge badge-sm indicator-item">8 New</span></Link>
+                        <Link style={{marginLeft:'-40px'}} className='font-bold' to='/myexpenses'>My Expenses<span class="badge badge-sm indicator-item"><span className='ml-px'>New</span></span></Link>
                 </div>
                 <div class="dropdown dropdown-end ml-8">
                     <label tabindex="0" class="btn btn-ghost btn-circle avatar">

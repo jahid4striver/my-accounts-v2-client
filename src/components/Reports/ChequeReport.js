@@ -28,7 +28,7 @@ const ChequeReport = () => {
         const startDate = e.target.startDate.value;
         const endDate = e.target.endDate.value;
         // console.log(startDate, endDate);
-        const url = `http://localhost:5000/filteredcheques?chequecategory=${category}&chequesubcategory=${subcategory}&startDate=${startDate}&endDate=${endDate}`
+        const url = `https://infinite-anchorage-69144.herokuapp.com/filteredcheques?chequecategory=${category}&chequesubcategory=${subcategory}&startDate=${startDate}&endDate=${endDate}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

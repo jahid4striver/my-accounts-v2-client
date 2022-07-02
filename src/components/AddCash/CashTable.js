@@ -28,7 +28,7 @@ const CashTable = ({cash, setUpdateCash, index}) => {
         <tr className='hover'>
             <td>{index+1}</td>
             <td>{cash.date}</td>
-            <td>{cash.account}</td>
+            <td>{cash.account.replace(/_/g, ' ')}</td>
             <td>{cash.amount}</td>
             <td>{cash.description}</td>
             <td>User</td>

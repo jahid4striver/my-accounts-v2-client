@@ -2,12 +2,16 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../Authentication/firebase.init';
+import Loading from '../Shared/Loading';
+import MyExpense from './MyExpense';
 
 const MyExpenses = () => {
-    const [user]= useAuthState(auth)
+    const [user] = useAuthState(auth)
 
     const [myExpenses, setMyExpenses] = useState([]);
+    const [loading, setLoading] = useState(true)
     // const [category, setCategory]= useState();
     // const [subCategory, setSubCategory]= useState();
     // const [owner, setOwner]= useState();
@@ -18,24 +22,31 @@ const MyExpenses = () => {
     //     setOwner('Personal');
     // }
 
-    if(user?.email=='hameem@myaccounts.com'){
-        fetch(`http://localhost:5000/myexpenses?category=Construction&subcategory=Hameem`)
-        .then(res => res.json())
-        .then(data => {
-            setMyExpenses(data)
-        })
+
+
+    if (user?.email == 'hameem@myaccounts.com') {
+        fetch(`https://infinite-anchorage-69144.herokuapp.com/myexpenses?category=Construction&subcategory=Hameem`)
+            .then(res => res.json())
+            .then(data => {
+                setMyExpenses(data)
+                setLoading(false)
+            })
     }
-    if(user?.email=='owner@myaccounts.com'){
-        fetch(`http://localhost:5000/ownerexpenses?category=Personal`)
-        .then(res => res.json())
-        .then(data => {
-            setMyExpenses(data)
-        })
+    if (user?.email == 'owner@myaccounts.com') {
+        fetch(`https://infinite-anchorage-69144.herokuapp.com/ownerexpenses?category=Personal`)
+            .then(res => res.json())
+            .then(data => {
+                setMyExpenses(data)
+                setLoading(false)
+            })
     }
 
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/ownerexpenses?category=${owner}`)
+    //     fetch(`https://infinite-anchorage-69144.herokuapp.com/ownerexpenses?category=${owner}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setMyExpenses(data)
@@ -43,15 +54,16 @@ const MyExpenses = () => {
     // }, [myExpenses, setMyExpenses, owner])
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/myexpenses?category=${category}&subcategory=${subCategory}`)
+    //     fetch(`https://infinite-anchorage-69144.herokuapp.com/myexpenses?category=${category}&subcategory=${subCategory}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setMyExpenses(data)
     //         })
     // }, [])
 
+    const myNewExpenses = myExpenses.filter(expense => !expense.status);
 
-    const totalExpense = myExpenses.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
+    const totalExpense = myNewExpenses.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
 
 
     return (
@@ -59,7 +71,7 @@ const MyExpenses = () => {
             <h2 className='text-center text-3xl text-red-500 my-8 font-serif'>My Expenses</h2>
             <div>
                 <div class="overflow-x-auto">
-                    <table class="table w-full">
+                    <table class="table w-full text-xs">
                         <thead>
                             <tr>
                                 <th>SL</th>
@@ -73,16 +85,7 @@ const MyExpenses = () => {
                         </thead>
                         <tbody>
                             {
-
-                                myExpenses.map((expense, index) => <tr className='hover'>
-                                    <td>{index + 1}</td>
-                                    <td>{expense.date}</td>
-                                    <td>{expense.expense}</td>
-                                    <td>{expense.category}</td>
-                                    <td>{expense.subcategory}</td>
-                                    <td>{expense.amount}</td>
-                                    <td><button for="update-modal" className='btn btn-info btn-xs'>Approve</button></td>
-                                </tr>)
+                                myNewExpenses.map((expenses, index) => <MyExpense key={expenses._id} expenses={expenses} index={index}></MyExpense>)
                             }
                         </tbody>
                         <tfoot>

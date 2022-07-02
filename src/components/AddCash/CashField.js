@@ -58,6 +58,15 @@ const CashField = ({ date }) => {
 
 
     const onSubmit = (data) => {
+        // const sl = data.sl;
+        // const date = data.date;
+        // const account = data.account;
+        // const amount = parseInt(-data.amount);
+        // const description = data.description;
+
+        // const newData = { sl, date, account, amount, description };
+
+
         fetch('https://infinite-anchorage-69144.herokuapp.com/dailycash', {
             method: 'POST',
             headers: {
