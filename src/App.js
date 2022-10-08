@@ -5,10 +5,12 @@ import AddCash from "./components/AddCash/AddCash";
 import AddCheques from "./components/AddCheque/AddCheques";
 import AddExpense from "./components/AddExpense/AddExpense";
 import AddAccounts from "./components/AddInformations/AddAccounts";
+import AddAdvanceSalary from "./components/AddInformations/AddAdvanceSalary";
 import AddBanks from "./components/AddInformations/AddBanks";
 import AddCategories from "./components/AddInformations/AddCategories";
 import AddLoanAccount from "./components/AddInformations/AddLoanAccount";
 import AddSubCategories from "./components/AddInformations/AddSubCategories";
+import AddLoan from "./components/AddLoan/AddLoan";
 import Login from "./components/Authentication/Login";
 import PrivateRoute from "./components/Authentication/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -34,6 +36,7 @@ function App() {
         <Route path="/" element={<PrivateRoute><Dashboard/></PrivateRoute>}>
           <Route index element={<Home />}></Route>
           <Route path="addexpense" element={<AddExpense />}></Route>
+          <Route path="addloan" element={<AddLoan />}></Route>
           <Route path="addcheque" element={<AddCheques />}></Route>
           <Route path="addcash" element={<AddCash />}></Route>
           <Route path="addcategories" element={<AddCategories />}></Route>
@@ -42,7 +45,8 @@ function App() {
           <Route path="addaccounts" element={<AddAccounts />}></Route>
           <Route path="allexpenses" element={<AllExpenses />}></Route>
           <Route path="categorywisereport" element={<CategoryWiseReport />}></Route>
-          <Route path="addloan" element={<AddLoanAccount />}></Route>
+          <Route path="addloangiven" element={<AddLoanAccount />}></Route>
+          <Route path="addsalarygiven" element={<AddAdvanceSalary />}></Route>
           <Route path="cashstatement" element={<CashStatement />}></Route>
           <Route path="incomeexpense" element={<IncomeExpense />}></Route>
           <Route path="chequereport" element={<ChequeReport />}></Route>

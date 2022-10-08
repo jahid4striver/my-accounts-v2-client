@@ -9,11 +9,13 @@ const Dashboard = () => {
                 <Outlet />
 
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side bg-red-200">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 text-base-content mt-px bg-red-200">
+                <ul class="menu p-4 overflow-y-auto w-80 text-base-content mt-px bg-red-200 h-max">
 
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addexpense'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Expenses</Link></li>
+                    <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addloan'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Loan Expenses</Link></li>
+                    <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addexpense'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Advance Salarys</Link></li>
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addcheque'><img className='h-8' src="https://www.svgrepo.com/show/86220/check.svg" alt="" /> Add Cheques</Link></li>
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addcash'><img className='h-8' src="https://www.svgrepo.com/show/320519/cash.svg" alt="" /> Add Cash</Link></li>
 
@@ -27,7 +29,8 @@ const Dashboard = () => {
                             <li><Link to='/addsubcategories'><img src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Add Sub-Categories</Link></li>
                             <li><Link to='/addbank'><img className='h-6' src="https://www.svgrepo.com/show/71268/bank.svg" alt="" /> Add Bank Name</Link></li>
                             <li><Link to='/addaccounts'><img className='h-6' src="https://www.svgrepo.com/show/4765/bank-sign.svg" alt="" /> Add Bank Accounts</Link></li>
-                            <li><Link to='/addloan'><img className='h-8' src="https://www.svgrepo.com/show/163357/loan.svg" alt="" /> Add Loan Accounts</Link></li>
+                            <li><Link to='/addloangiven'><img className='h-8' src="https://www.svgrepo.com/show/163357/loan.svg" alt="" /> Add Loan Accounts</Link></li>
+                            <li><Link to='/addsalarygiven'><img className='h-8' src="https://www.svgrepo.com/show/163357/loan.svg" alt="" /> Add Advance Salary Accounts</Link></li>
                         </div>
                     </div>
                     <div class="collapse">

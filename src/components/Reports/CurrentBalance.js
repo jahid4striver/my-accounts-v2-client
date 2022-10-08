@@ -24,7 +24,7 @@ const CurrentBalance = () => {
     const handleBalance=(ac)=>{
         const underscore =ac.name.replace(/ /g,"_");
 
-        const url= `http://localhost:5000/accountsbalance?account=${underscore}`
+        const url= `https://infinite-anchorage-69144.herokuapp.com/accountsbalance?account=${underscore}`
         console.log(url);
         fetch(url)
         .then(res=> res.json())

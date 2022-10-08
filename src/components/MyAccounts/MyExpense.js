@@ -9,7 +9,7 @@ const {_id, date, expense, category,subcategory, amount}= expenses;
 
         const finalExpenses = {status };
 
-        fetch(`http://localhost:5000/finalexpense/${id}`, {
+        fetch(`https://infinite-anchorage-69144.herokuapp.com/finalexpense/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
