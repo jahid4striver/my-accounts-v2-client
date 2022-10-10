@@ -45,6 +45,7 @@ const Dashboard = () => {
                             <li className='mt-2'><Link to='/chequereport'><img className='h-8' src='https://www.svgrepo.com/show/32881/cash.svg' alt="" />Category Wise Cheques</Link></li>
                             <li><Link to='/categorywisereport'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Category Wise Expense</Link></li>
                             <li><Link to='/incomeexpense'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Income Expense Category Report</Link></li>
+                            <li><Link to='/loangivenreturn'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Loan Given Return Report</Link></li>
                         </div>
                     </div>
                 </ul>

@@ -63,7 +63,7 @@ const LoanField = ({ date }) => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/loanaccountsgiven')
+        fetch('https://infinite-anchorage-69144.herokuapp.com/loanaccountsgiven')
             .then(res => res.json())
             .then(data => {
                 setLoanAccounts(data)
@@ -76,23 +76,23 @@ const LoanField = ({ date }) => {
 
     const onSubmit = (data) => {
         
-        const sl= data.sl;
-        const date= data.date;
-        const expense= data.expense.replace(/ /g,"_");
-        const category= data.category;
-        const subcategory= data.subcategory;
-        const amount= data.amount;
+//         const sl= data.sl;
+//         const date= data.date;
+//         const expense= data.expense.replace(/ /g,"_");
+//         const category= data.category;
+//         const subcategory= data.subcategory;
+//         const amount= data.amount;
 
-const alldata= {sl, date, expense, category, subcategory, amount};
+// const alldata= {sl, date, expense, category, subcategory, amount};
 
-console.log(alldata);
+// console.log(alldata);
 
         fetch('https://infinite-anchorage-69144.herokuapp.com/dailyledger', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(alldata)
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(data => {

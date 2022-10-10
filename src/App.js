@@ -22,6 +22,7 @@ import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
 import ChequeReport from "./components/Reports/ChequeReport";
 import CurrentBalance from "./components/Reports/CurrentBalance";
 import IncomeExpense from "./components/Reports/IncomeExpense";
+import LoanGivenReport from "./components/Reports/LoanGivenReport";
 import Navbar from "./components/Shared/Navbar";
 
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="addsalarygiven" element={<AddAdvanceSalary />}></Route>
           <Route path="cashstatement" element={<CashStatement />}></Route>
           <Route path="incomeexpense" element={<IncomeExpense />}></Route>
+          <Route path="loangivenreturn" element={<LoanGivenReport />}></Route>
           <Route path="chequereport" element={<ChequeReport />}></Route>
           <Route path="myexpenses" element={<MyExpenses />}></Route>
           <Route path="currentbalance" element={<CurrentBalance />}></Route>
