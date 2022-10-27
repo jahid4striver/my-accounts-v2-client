@@ -9,7 +9,7 @@ const CurrentBalance = () => {
     const [accounts, setAccounts]= useState([]);
 
 
-    const { data: bankAccounts, isLoading } = useQuery(['accounts'], () => fetch('https://infinite-anchorage-69144.herokuapp.com/accounts').then(res => res.json()));
+    const { data: bankAccounts, isLoading } = useQuery(['accounts'], () => fetch('https://damp-ocean-49219.herokuapp.com/accounts').then(res => res.json()));
 
 
     // if(user.email=='hameem@myaccounts.com'){
@@ -24,7 +24,7 @@ const CurrentBalance = () => {
     const handleBalance=(ac)=>{
         const underscore =ac.name.replace(/ /g,"_");
 
-        const url= `https://infinite-anchorage-69144.herokuapp.com/accountsbalance?account=${underscore}`
+        const url= `https://damp-ocean-49219.herokuapp.com/accountsbalance?account=${underscore}`
         console.log(url);
         fetch(url)
         .then(res=> res.json())
@@ -38,7 +38,7 @@ const CurrentBalance = () => {
 
 
     // useEffect(() => {
-    //     fetch('https://infinite-anchorage-69144.herokuapp.com/banks')
+    //     fetch('https://damp-ocean-49219.herokuapp.com/banks')
     //         .then(res => res.json())
     //         .then(data => {
     //             setBanks(data);

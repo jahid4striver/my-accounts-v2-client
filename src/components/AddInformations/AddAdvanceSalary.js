@@ -8,7 +8,7 @@ const AddAdvanceSalary= () => {
     const [salary, setSalary] = useState([]);
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/advancesalary')
+        fetch('https://damp-ocean-49219.herokuapp.com/advancesalary')
             .then(res => res.json())
             .then(data => {
                 setSalary(data);
@@ -22,7 +22,7 @@ const AddAdvanceSalary= () => {
 
     const onSubmit = data => {
 
-        fetch('https://infinite-anchorage-69144.herokuapp.com/advancesalary', {
+        fetch('https://damp-ocean-49219.herokuapp.com/advancesalary', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddAdvanceSalary= () => {
     const handleDeleteAdvanceSalary = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://infinite-anchorage-69144.herokuapp.com/advancesalary/${id}`, {
+            fetch(`https://damp-ocean-49219.herokuapp.com/advancesalary/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

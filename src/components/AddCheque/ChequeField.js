@@ -29,7 +29,7 @@ const ChequeField = ({ today }) => {
 
 
     useEffect(() => {
-        fetch(`https://infinite-anchorage-69144.herokuapp.com/chequeledger`)
+        fetch(`https://damp-ocean-49219.herokuapp.com/chequeledger`)
             .then(res => res.json())
             .then(data => {
                 setAllCheques(data)
@@ -37,7 +37,7 @@ const ChequeField = ({ today }) => {
     }, [allCheques, setAllCheques, updateCheque, setUpdateCheque, today])
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/categories')
+        fetch('https://damp-ocean-49219.herokuapp.com/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data)
@@ -45,14 +45,14 @@ const ChequeField = ({ today }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/subcategories')
+        fetch('https://damp-ocean-49219.herokuapp.com/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data)
             })
     }, [])
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/banks')
+        fetch('https://damp-ocean-49219.herokuapp.com/banks')
             .then(res => res.json())
             .then(data => {
                 setBanks(data)
@@ -60,7 +60,7 @@ const ChequeField = ({ today }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/accounts')
+        fetch('https://damp-ocean-49219.herokuapp.com/accounts')
             .then(res => res.json())
             .then(data => {
                 setAccounts(data)
@@ -72,7 +72,7 @@ const ChequeField = ({ today }) => {
 
 
     const onSubmit = (data) => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/chequeledger', {
+        fetch('https://damp-ocean-49219.herokuapp.com/chequeledger', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

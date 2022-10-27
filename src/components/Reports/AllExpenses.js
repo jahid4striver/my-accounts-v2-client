@@ -9,7 +9,7 @@ const AllExpenses = () => {
     const [updateExp, setUpdateExp] = useState(null);
 
     useEffect(() => {
-        fetch(`https://infinite-anchorage-69144.herokuapp.com/dailyledger`)
+        fetch(`https://damp-ocean-49219.herokuapp.com/dailyledger`)
             .then(res => res.json())
             .then(data => {
                 setAllExpenses(data)

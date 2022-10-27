@@ -15,7 +15,7 @@ const LoanGivenReport = () => {
     const subcategoryRef = useRef();
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/loanaccountsgiven')
+        fetch('https://damp-ocean-49219.herokuapp.com/loanaccountsgiven')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -31,7 +31,7 @@ const LoanGivenReport = () => {
         const loanReturn= category.slice(0,-6);
         console.log(loanReturn);
         // const withoutSpace=category.replace(/ /g,"_");
-        const url = `https://infinite-anchorage-69144.herokuapp.com/dailyledger`;
+        const url = `https://damp-ocean-49219.herokuapp.com/dailyledger`;
 
         fetch(url)
             .then(res => res.json())
@@ -41,7 +41,7 @@ const LoanGivenReport = () => {
                 setFilteredExpense(onlyLoanGiven)
                 setIsLoaded(true)
             })
-        const url2 = `https://infinite-anchorage-69144.herokuapp.com/loanreturnreport`
+        const url2 = `https://damp-ocean-49219.herokuapp.com/loanreturnreport`
 
         fetch(url2)
             .then(res => res.json())
@@ -90,7 +90,7 @@ const LoanGivenReport = () => {
     // })
     // console.log();
 
-    // const url2= `https://infinite-anchorage-69144.herokuapp.com/expenseamount?category=${category}$subcategory=${subcategory}`
+    // const url2= `https://damp-ocean-49219.herokuapp.com/expenseamount?category=${category}$subcategory=${subcategory}`
 
 
 

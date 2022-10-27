@@ -22,7 +22,7 @@ const CashField = ({ date }) => {
     const formatedDate = format(date, "yyyy-MM-dd");
 
     useEffect(() => {
-        fetch(`https://infinite-anchorage-69144.herokuapp.com/todaycash?date=${formatedDate}`)
+        fetch(`https://damp-ocean-49219.herokuapp.com/todaycash?date=${formatedDate}`)
             .then(res => res.json())
             .then(data => {
                 setCashes(data)
@@ -30,7 +30,7 @@ const CashField = ({ date }) => {
     }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
 
     useEffect(() => {
-        fetch(`https://infinite-anchorage-69144.herokuapp.com/dailycash`)
+        fetch(`https://damp-ocean-49219.herokuapp.com/dailycash`)
             .then(res => res.json())
             .then(data => {
                 setAllCash(data)
@@ -38,7 +38,7 @@ const CashField = ({ date }) => {
     }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/accounts')
+        fetch('https://damp-ocean-49219.herokuapp.com/accounts')
             .then(res => res.json())
             .then(data => {
                 setBanks(data)
@@ -46,7 +46,7 @@ const CashField = ({ date }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-anchorage-69144.herokuapp.com/loanaccounts')
+        fetch('https://damp-ocean-49219.herokuapp.com/loanaccounts')
             .then(res => res.json())
             .then(data => {
                 setLoans(data)
@@ -67,7 +67,7 @@ const CashField = ({ date }) => {
         // const newData = { sl, date, account, amount, description };
 
 
-        fetch('https://infinite-anchorage-69144.herokuapp.com/dailycash', {
+        fetch('https://damp-ocean-49219.herokuapp.com/dailycash', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

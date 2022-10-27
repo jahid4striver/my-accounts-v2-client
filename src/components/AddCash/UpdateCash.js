@@ -10,7 +10,7 @@ const UpdateCash = ({ updateCash, setUpdateCash }) => {
 
 
     const onSubmit = (data) => {
-        fetch(`https://infinite-anchorage-69144.herokuapp.com/dailycash/${_id}`, {
+        fetch(`https://damp-ocean-49219.herokuapp.com/dailycash/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
