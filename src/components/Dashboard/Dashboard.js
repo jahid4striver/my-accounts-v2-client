@@ -13,9 +13,9 @@ const Dashboard = () => {
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 text-base-content mt-px bg-red-200 h-max">
 
-                    <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addexpense'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Expenses</Link></li>
-                    <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addloan'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Loan Expenses</Link></li>
-                    <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addexpense'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Advance Salarys</Link></li>
+                    <li className=' bg-blue-400 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addexpense'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Expenses</Link></li>
+                    <li className=' bg-blue-400 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addloan'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Loan Expenses</Link></li>
+                    <li className=' bg-blue-400 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addsalary'><img className='h-8' src="https://www.svgrepo.com/show/32881/cash.svg" alt="" />Add Advance Salarys</Link></li>
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addcheque'><img className='h-8' src="https://www.svgrepo.com/show/86220/check.svg" alt="" /> Add Cheques</Link></li>
                     <li className=' bg-red-300 peer-checked:bg-red-400 peer-checked:text-secondary-content mb-2'><Link to='/addcash'><img className='h-8' src="https://www.svgrepo.com/show/320519/cash.svg" alt="" /> Add Cash</Link></li>
 
@@ -46,6 +46,7 @@ const Dashboard = () => {
                             <li><Link to='/categorywisereport'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Category Wise Expense</Link></li>
                             <li><Link to='/incomeexpense'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Income Expense Category Report</Link></li>
                             <li><Link to='/loangivenreturn'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Loan Given Return Report</Link></li>
+                            <li><Link to='/advancesalaryreport'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Advance Salary Report</Link></li>
                         </div>
                     </div>
                 </ul>

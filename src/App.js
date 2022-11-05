@@ -11,11 +11,13 @@ import AddCategories from "./components/AddInformations/AddCategories";
 import AddLoanAccount from "./components/AddInformations/AddLoanAccount";
 import AddSubCategories from "./components/AddInformations/AddSubCategories";
 import AddLoan from "./components/AddLoan/AddLoan";
+import AddSalary from "./components/AddSalary/AddSalary";
 import Login from "./components/Authentication/Login";
 import PrivateRoute from "./components/Authentication/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import MyExpenses from "./components/MyAccounts/MyExpenses";
+import AdvanceSalaryReport from "./components/Reports/AdvanceSalaryReport";
 import AllExpenses from "./components/Reports/AllExpenses";
 import CashStatement from "./components/Reports/CashStatement";
 import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
@@ -38,6 +40,7 @@ function App() {
           <Route index element={<Home />}></Route>
           <Route path="addexpense" element={<AddExpense />}></Route>
           <Route path="addloan" element={<AddLoan />}></Route>
+          <Route path="addsalary" element={<AddSalary />}></Route>
           <Route path="addcheque" element={<AddCheques />}></Route>
           <Route path="addcash" element={<AddCash />}></Route>
           <Route path="addcategories" element={<AddCategories />}></Route>
@@ -51,6 +54,7 @@ function App() {
           <Route path="cashstatement" element={<CashStatement />}></Route>
           <Route path="incomeexpense" element={<IncomeExpense />}></Route>
           <Route path="loangivenreturn" element={<LoanGivenReport />}></Route>
+          <Route path="advancesalaryreport" element={<AdvanceSalaryReport />}></Route>
           <Route path="chequereport" element={<ChequeReport />}></Route>
           <Route path="myexpenses" element={<MyExpenses />}></Route>
           <Route path="currentbalance" element={<CurrentBalance />}></Route>

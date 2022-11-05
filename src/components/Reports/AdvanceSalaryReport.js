@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
 
-const LoanGivenReport = () => {
+const AdvanceSalaryReport = () => {
 
     const [categories, setCategories] = useState([]);
     const [subcategories, setsubCategories] = useState([]);
@@ -15,7 +15,7 @@ const LoanGivenReport = () => {
     const subcategoryRef = useRef();
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/loanaccountsgiven')
+        fetch('https://damp-ocean-49219.herokuapp.com/advancesalary')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -96,11 +96,11 @@ const LoanGivenReport = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <h2 className='mt-8 text-center text-2xl font-bold'>Loan Given-Return Statement</h2>
+            <h2 className='mt-8 text-center text-2xl font-bold'>Advance Salary Statement</h2>
             <form onSubmit={handleFilteredData} className='mt-12 flex flex-col lg:flex-row justify-center items-center'>
                 <div class="form-control w-full max-w-xs lg:mr-2">
                     <label class="label">
-                        <span class="label-text">Select The Category</span>
+                        <span class="label-text">Select Salary Accounts</span>
                     </label>
                     <select name='category' class="select select-bordered w-full max-w-xs">
                         {
@@ -204,4 +204,4 @@ const LoanGivenReport = () => {
     );
 };
 
-export default LoanGivenReport;
+export default AdvanceSalaryReport;
