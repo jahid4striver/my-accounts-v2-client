@@ -9,7 +9,7 @@ const AddLoanAccount = () => {
     const [loanAccountsGiven, setLoanAccountsGiven] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/loanaccounts')
+        fetch('https://my-accounts.onrender.com/loanaccounts')
             .then(res => res.json())
             .then(data => {
                 setLoanAccounts(data);
@@ -18,7 +18,7 @@ const AddLoanAccount = () => {
     }, [loanAccounts, loanAccountsGiven])
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/loanaccountsgiven')
+        fetch('https://my-accounts.onrender.com/loanaccountsgiven')
             .then(res => res.json())
             .then(data => {
                 setLoanAccountsGiven(data);
@@ -32,7 +32,7 @@ const AddLoanAccount = () => {
 
     const onSubmit = data => {
 
-        fetch('https://damp-ocean-49219.herokuapp.com/loanaccounts', {
+        fetch('https://my-accounts.onrender.com/loanaccounts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const AddLoanAccount = () => {
     const handleDeleteLoanAccount = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://damp-ocean-49219.herokuapp.com/loanaccounts/${id}`, {
+            fetch(`https://my-accounts.onrender.com/loanaccounts/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -63,7 +63,7 @@ const AddLoanAccount = () => {
     }
     const onSubmitGiven = data => {
 
-        fetch('https://damp-ocean-49219.herokuapp.com/loanaccountsgiven', {
+        fetch('https://my-accounts.onrender.com/loanaccountsgiven', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -82,7 +82,7 @@ const AddLoanAccount = () => {
     const handleDeleteLoanAccountGiven = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://damp-ocean-49219.herokuapp.com/loanaccountsgiven/${id}`, {
+            fetch(`https://my-accounts.onrender.com/loanaccountsgiven/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -21,7 +21,7 @@ const CashStatement = () => {
         const startDate = e.target.startDate.value;
         const endDate = e.target.endDate.value;
 
-        const url = `https://damp-ocean-49219.herokuapp.com/onlyexpense?startDate=${startDate}&endDate=${endDate}`
+        const url = `https://my-accounts.onrender.com/onlyexpense?startDate=${startDate}&endDate=${endDate}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -30,7 +30,7 @@ const CashStatement = () => {
                 setFilteredExpense(data);
             })
 
-        const url2 = `https://damp-ocean-49219.herokuapp.com/onlyincome?startDate=${startDate}&endDate=${endDate}`
+        const url2 = `https://my-accounts.onrender.com/onlyincome?startDate=${startDate}&endDate=${endDate}`
 
         fetch(url2)
             .then(res => res.json())
@@ -44,7 +44,7 @@ const CashStatement = () => {
             today.setDate(today.getDate()-1)
             const yesterday = format(today, "yyyy-MM-dd");
 
-        const url3=`https://damp-ocean-49219.herokuapp.com/yesterdaycash?date=${yesterday}`
+        const url3=`https://my-accounts.onrender.com/yesterdaycash?date=${yesterday}`
         console.log(url3);
         fetch(url3)
         .then(res=> res.json())
@@ -73,7 +73,7 @@ const CashStatement = () => {
         const cash= parseInt(lastCash);
         const closingBalance= {date, cash};
 
-        fetch(`https://damp-ocean-49219.herokuapp.com/handcash?date=${date}`, {
+        fetch(`https://my-accounts.onrender.com/handcash?date=${date}`, {
             method: 'PUT',
             headers:{
                 'content-type': 'application/json'

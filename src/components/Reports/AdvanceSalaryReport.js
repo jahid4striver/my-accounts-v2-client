@@ -15,7 +15,7 @@ const AdvanceSalaryReport = () => {
     const subcategoryRef = useRef();
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/advancesalary')
+        fetch('https://my-accounts.onrender.com/advancesalary')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -31,7 +31,7 @@ const AdvanceSalaryReport = () => {
         const loanReturn= category.slice(0,-6);
         console.log(loanReturn);
         // const withoutSpace=category.replace(/ /g,"_");
-        const url = `https://damp-ocean-49219.herokuapp.com/dailyledger`;
+        const url = `https://my-accounts.onrender.com/dailyledger`;
 
         fetch(url)
             .then(res => res.json())
@@ -41,7 +41,7 @@ const AdvanceSalaryReport = () => {
                 setFilteredExpense(onlyLoanGiven)
                 setIsLoaded(true)
             })
-        const url2 = `https://damp-ocean-49219.herokuapp.com/loanreturnreport`
+        const url2 = `https://my-accounts.onrender.com/loanreturnreport`
 
         fetch(url2)
             .then(res => res.json())
@@ -90,7 +90,7 @@ const AdvanceSalaryReport = () => {
     // })
     // console.log();
 
-    // const url2= `https://damp-ocean-49219.herokuapp.com/expenseamount?category=${category}$subcategory=${subcategory}`
+    // const url2= `https://my-accounts.onrender.com/expenseamount?category=${category}$subcategory=${subcategory}`
 
 
 

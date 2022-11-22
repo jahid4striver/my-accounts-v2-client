@@ -8,7 +8,7 @@ const AddSubCategories = () => {
     const [subCategories, setSubCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/subcategories')
+        fetch('https://my-accounts.onrender.com/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data);
@@ -22,7 +22,7 @@ const AddSubCategories = () => {
 
     const onSubmit = data => {
 
-        fetch('https://damp-ocean-49219.herokuapp.com/subcategories', {
+        fetch('https://my-accounts.onrender.com/subcategories', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddSubCategories = () => {
     const handleDeleteSubCategory = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://damp-ocean-49219.herokuapp.com/subcategories/${id}`, {
+            fetch(`https://my-accounts.onrender.com/subcategories/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -8,7 +8,7 @@ const AddAccounts = () => {
     const [accounts, setAccounts] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/accounts')
+        fetch('https://my-accounts.onrender.com/accounts')
             .then(res => res.json())
             .then(data => {
                 setAccounts(data);
@@ -22,7 +22,7 @@ const AddAccounts = () => {
 
     const onSubmit = data => {
 
-        fetch('https://damp-ocean-49219.herokuapp.com/accounts', {
+        fetch('https://my-accounts.onrender.com/accounts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddAccounts = () => {
     const handleDeleteAccount = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://damp-ocean-49219.herokuapp.com/accounts/${id}`, {
+            fetch(`https://my-accounts.onrender.com/accounts/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

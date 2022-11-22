@@ -9,7 +9,7 @@ const AddCategories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/categories')
+        fetch('https://my-accounts.onrender.com/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -23,7 +23,7 @@ const AddCategories = () => {
 
     const onSubmit = data => {
 
-        fetch('https://damp-ocean-49219.herokuapp.com/categories', {
+        fetch('https://my-accounts.onrender.com/categories', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const AddCategories = () => {
     const handleDeleteCategory = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://damp-ocean-49219.herokuapp.com/categories/${id}`, {
+            fetch(`https://my-accounts.onrender.com/categories/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

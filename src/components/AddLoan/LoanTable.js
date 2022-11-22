@@ -11,7 +11,7 @@ const LoanTable = ({expense, setUpdateExp, index}) => {
         const proceed= window.confirm('Ary You Sure Want To Delete')
 
         if(proceed){
-            fetch(`https://damp-ocean-49219.herokuapp.com/dailyledger/${expense._id}`, {
+            fetch(`https://my-accounts.onrender.com/dailyledger/${expense._id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

@@ -18,6 +18,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import MyExpenses from "./components/MyAccounts/MyExpenses";
 import AdvanceSalaryReport from "./components/Reports/AdvanceSalaryReport";
+import AllCash from "./components/Reports/AllCash";
 import AllExpenses from "./components/Reports/AllExpenses";
 import CashStatement from "./components/Reports/CashStatement";
 import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
@@ -48,6 +49,7 @@ function App() {
           <Route path="addbank" element={<AddBanks />}></Route>
           <Route path="addaccounts" element={<AddAccounts />}></Route>
           <Route path="allexpenses" element={<AllExpenses />}></Route>
+          <Route path="allcash" element={<AllCash />}></Route>
           <Route path="categorywisereport" element={<CategoryWiseReport />}></Route>
           <Route path="addloangiven" element={<AddLoanAccount />}></Route>
           <Route path="addsalarygiven" element={<AddAdvanceSalary />}></Route>

@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 
 
-const CashTable = ({cash, setUpdateCash, index}) => {
+const AllCashTable = ({cash, setUpdateCash, index}) => {
 
 
     const handleDeleteCash= ()=>{
@@ -38,4 +38,4 @@ const CashTable = ({cash, setUpdateCash, index}) => {
     );
 };
 
-export default CashTable;
+export default AllCashTable;

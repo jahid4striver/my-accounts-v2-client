@@ -8,7 +8,7 @@ const AddBanks= () => {
     const [banks, setBanks] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/banks')
+        fetch('https://my-accounts.onrender.com/banks')
             .then(res => res.json())
             .then(data => {
                 setBanks(data);
@@ -22,7 +22,7 @@ const AddBanks= () => {
 
     const onSubmit = data => {
 
-        fetch('https://damp-ocean-49219.herokuapp.com/banks', {
+        fetch('https://my-accounts.onrender.com/banks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddBanks= () => {
     const handleDeleteBank = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://damp-ocean-49219.herokuapp.com/banks/${id}`, {
+            fetch(`https://my-accounts.onrender.com/banks/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

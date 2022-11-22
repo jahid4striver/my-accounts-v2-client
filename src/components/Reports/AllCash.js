@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import AllExpenseTable from './AllExpenseTable';
-import UpdateModal from '../AddExpense/UpdateModal';
+import AllCashTable from './AllCashTable';
 
 
 
-const AllExpenses = () => {
-    const [allExpenses, setAllExpenses] = useState([]);
-    const [updateExp, setUpdateExp] = useState(null);
+
+
+const AllCash = () => {
+    const [allCash, setAllCash] = useState([]);
+    
+
+
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/dailyledger`)
+        fetch(`https://my-accounts.onrender.com/dailycash`)
             .then(res => res.json())
             .then(data => {
-                setAllExpenses(data)
+                setAllCash(data)
             })
-    }, [allExpenses, setAllExpenses])
+    }, [])
 
     
-    const totalExpense = allExpenses.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
+    const totalCash = allCash.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
 
 
     return (
         <div className='shadow-2xl px-12 my-5'>
-            <h2 className='text-center text-3xl text-red-500 my-8 font-serif'>All Expenses</h2>
+            <h2 className='text-center text-3xl text-red-500 my-8 font-serif'>All Cash</h2>
             <div>
                 <div class="overflow-x-auto">
                     <table class="table w-full">
@@ -30,10 +33,9 @@ const AllExpenses = () => {
                             <tr>
                                 <th>SL</th>
                                 <th>Date</th>
-                                <th>Expense Name</th>
-                                <th>Category</th>
-                                <th>Sub Category</th>
+                                <th>Cash Account</th>
                                 <th>Amount</th>
+                                <th>Description</th>
                                 <th>User</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -42,21 +44,19 @@ const AllExpenses = () => {
                         <tbody>
                             {
 
-                                allExpenses.map((expense, index) => <AllExpenseTable
-                                    key={expense._id}
-                                    expense={expense}
+                                allCash.map((cash, index) => <AllCashTable
+                                    key={cash._id}
+                                    cash={cash}
                                     index={index}
-                                ></AllExpenseTable>)
+                                ></AllCashTable>)
                             }
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>Total Expense</th>
-                                <th>{totalExpense}</th>
+                                <th>Total Cash</th>
+                                <th>{totalCash}</th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
@@ -64,12 +64,9 @@ const AllExpenses = () => {
                         </tfoot>
                     </table>
                 </div>
-                {
-                    updateExp && <UpdateModal setUpdateExp={setUpdateExp} updateExp={updateExp}></UpdateModal>
-                }
             </div>
         </div>
     );
 };
 
-export default AllExpenses;
+export default AllCash;

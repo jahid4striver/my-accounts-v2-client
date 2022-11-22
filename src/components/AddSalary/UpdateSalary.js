@@ -10,7 +10,7 @@ const UpdateSalary = ({ updateExp, setUpdateExp }) => {
 
 
     const onSubmit = (data) => {
-        fetch(`https://damp-ocean-49219.herokuapp.com/dailyledger/${_id}`, {
+        fetch(`https://my-accounts.onrender.com/dailyledger/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

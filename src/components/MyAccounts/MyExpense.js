@@ -9,7 +9,7 @@ const {_id, date, expense, category,subcategory, amount}= expenses;
 
         const finalExpenses = {status };
 
-        fetch(`https://damp-ocean-49219.herokuapp.com/finalexpense/${id}`, {
+        fetch(`https://my-accounts.onrender.com/finalexpense/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

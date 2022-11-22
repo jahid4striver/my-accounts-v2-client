@@ -11,14 +11,14 @@ const Navbar = () => {
    
 
     // if (user?.email == 'hameem@myaccounts.com') {
-    //     fetch(`https://damp-ocean-49219.herokuapp.com/myexpenses?category=Construction&subcategory=Hameem`)
+    //     fetch(`https://my-accounts.onrender.com/myexpenses?category=Construction&subcategory=Hameem`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setMyExpenses(data)
     //         })
     // }
     // if (user?.email == 'owner@myaccounts.com') {
-    //     fetch(`https://damp-ocean-49219.herokuapp.com/ownerexpenses?category=Personal`)
+    //     fetch(`https://my-accounts.onrender.com/ownerexpenses?category=Personal`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setMyExpenses(data)

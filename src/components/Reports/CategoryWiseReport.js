@@ -7,14 +7,14 @@ const CategoryWiseReport = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/categories')
+        fetch('https://my-accounts.onrender.com/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
             })
     }, [])
     useEffect(() => {
-        fetch('https://damp-ocean-49219.herokuapp.com/subcategories')
+        fetch('https://my-accounts.onrender.com/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data);
@@ -28,7 +28,7 @@ const CategoryWiseReport = () => {
         const startDate = e.target.startDate.value;
         const endDate = e.target.endDate.value;
         // console.log(startDate, endDate);
-        const url = `https://damp-ocean-49219.herokuapp.com/filteredexpense?category=${category}&subcategory=${subcategory}&startDate=${startDate}&endDate=${endDate}`
+        const url = `https://my-accounts.onrender.com/filteredexpense?category=${category}&subcategory=${subcategory}&startDate=${startDate}&endDate=${endDate}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
