@@ -2,17 +2,22 @@ import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 const LoanGivenReport = () => {
 
     const [categories, setCategories] = useState([]);
-    const [subcategories, setsubCategories] = useState([]);
     const [filteredExpense, setFilteredExpense] = useState([]);
     const [filteredIncome, setFilteredIncome] = useState([]);
-    const [opening, setOpening] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false)
     // const categoryRef= useRef('');
-    const subcategoryRef = useRef();
+    const [loading, setLoading] = useState(true)
+    let content;
+    
+    if (loading) {
+       content= <Loading></Loading>
+    }
+
 
     useEffect(() => {
         fetch('https://my-accounts.onrender.com/loanaccountsgiven')
@@ -28,7 +33,7 @@ const LoanGivenReport = () => {
         e.preventDefault();
 
         const category = e.target.category.value;
-        const loanReturn= category.slice(0,-6);
+        const loanReturn = category.slice(0, -6);
         console.log(loanReturn);
         // const withoutSpace=category.replace(/ /g,"_");
         const url = `https://my-accounts.onrender.com/dailyledger`;
@@ -36,7 +41,7 @@ const LoanGivenReport = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                const onlyLoanGiven= data.filter(loan=> loan.expense.includes(category))
+                const onlyLoanGiven = data.filter(loan => loan.expense.includes(category))
                 console.log(onlyLoanGiven);
                 setFilteredExpense(onlyLoanGiven)
                 setIsLoaded(true)
@@ -46,7 +51,7 @@ const LoanGivenReport = () => {
         fetch(url2)
             .then(res => res.json())
             .then(data => {
-                const onlyLoanReturn= data.filter(loan=> loan.description.includes(loanReturn))
+                const onlyLoanReturn = data.filter(loan => loan.description.includes(loanReturn))
                 console.log(onlyLoanReturn);
                 setFilteredIncome(onlyLoanReturn)
             })
@@ -58,7 +63,7 @@ const LoanGivenReport = () => {
 
     const totalExpense = filteredExpense.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
     const totalIncome = filteredIncome.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
-    const closingBalance =totalExpense-totalIncome;
+    const closingBalance = totalExpense - totalIncome;
     // setClosing(closingBalance);
 
 
@@ -129,7 +134,7 @@ const LoanGivenReport = () => {
                                 filteredExpense.map((expense, index) => <tr>
                                     <td>{index + 1}</td>
                                     <td>{expense.date}</td>
-                                    <td>{expense.expense.replace(/_/g," ")}</td>
+                                    <td>{expense.expense.replace(/_/g, " ")}</td>
                                     <td>{expense.amount}</td>
                                 </tr>)
 

@@ -48,6 +48,7 @@ const Dashboard = () => {
                             <li><Link to='/incomeexpense'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Income Expense Category Report</Link></li>
                             <li><Link to='/loangivenreturn'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Loan Given Return Report</Link></li>
                             <li><Link to='/advancesalaryreport'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Advance Salary Report</Link></li>
+                            <li><Link to='/bankstatement'><img className='h-8' src='https://www.svgrepo.com/show/356425/category.svg' alt="" />Bank Statement</Link></li>
                         </div>
                     </div>
                 </ul>
