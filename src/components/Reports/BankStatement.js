@@ -5,6 +5,7 @@ const BankStatement = () => {
     const [bankName, setBankName] = useState([]);
     const [bankDeposit, setBankDeposit] = useState([]);
     const [bankWithdraw, setBankWithdraw] = useState([]);
+    const [cashDeposit, setCashDeposit] = useState([]);
     const [opening, setOpening] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -20,14 +21,26 @@ const BankStatement = () => {
             chequeamount, chequebank, chequecategory, chequeno, chequedate, chequesubcategory, chequeunit, depositaccount, depositbank
             , date, sl, _id
         }));
+    const newArray2= cashDeposit.map((
+        { amount: chequeamount,
+            account: depositaccount, date: date, sl: sl,
+            _id: _id, description:description, profitAccounts:profitAccounts }) => (
 
-    const joinArray = newArray.concat(bankWithdraw);
+        {
+            chequeamount, depositaccount, date, description, profitAccounts
+            , sl, _id
+        }));
+
+    const joinArray = newArray.concat(newArray2);
+    const joinArray2 = joinArray.concat(bankWithdraw);
 
 
     // const sorted= joinArray.sort((a,b)=> a.date-b.date)
-    const sorted = joinArray.sort(function (a, b) {
+    const sorted = joinArray2.sort(function (a, b) {
         return (a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0);
     });
+
+    console.log(sorted);
     // const options = [
     //     { value: "chocolate", label: "Chocolate" },
     //     { value: "strawberry", label: "Strawberry" },
@@ -70,8 +83,16 @@ const BankStatement = () => {
                 setBankWithdraw(onlyBankWithdraw)
             })
 
-        const url3 = `https://my-accounts.onrender.com/accounts`
+        const url3 = `https://my-accounts.onrender.com/deposits`
         fetch(url3)
+            .then(res => res.json())
+            .then(data => {
+                const onlyCashDeposits = data.filter(deposit => deposit.account.includes(bankName))
+                console.log(onlyCashDeposits);
+                setCashDeposit(onlyCashDeposits)
+            })
+        const url4 = `https://my-accounts.onrender.com/accounts`
+        fetch(url4)
             .then(res => res.json())
             .then(data => {
                 const openingBalance = data.filter(account => account.name.includes(bankName))
@@ -79,7 +100,7 @@ const BankStatement = () => {
             })
     }
     const openingBl = parseInt(opening[0]?.opening);
-    const totalDeposit = bankDeposit.reduce((total, currentValue) => total + parseInt(currentValue.chequeamount), 0);
+    const totalDeposit = joinArray.reduce((total, currentValue) => total + parseInt(currentValue.chequeamount), 0);
     const totalWithdraw = bankWithdraw.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
     const closingBalance = openingBl + totalDeposit - totalWithdraw;
     return (

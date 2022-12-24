@@ -94,7 +94,7 @@ const DepositField = ({ date }) => {
                     }
                 </select>
                
-                <input {...register("amount")} type="text" placeholder="Amount" class="input input-bordered w-full max-w-xs" required />
+                <input {...register("amount")} type="number" placeholder="Amount" class="input input-bordered w-full max-w-xs" required />
                 <select {...register("profitAccounts")} defaultValue='' class="select select-bordered w-full max-w-xs" required>
                     <option selected>Select Profit Accounts</option>
                     {
