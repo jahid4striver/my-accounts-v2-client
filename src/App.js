@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import AddBankDeposit from "./components/AddBankDeposit/AddBankDeposit";
 import AddCash from "./components/AddCash/AddCash";
 import AddCheques from "./components/AddCheque/AddCheques";
 import AddExpense from "./components/AddExpense/AddExpense";
@@ -9,6 +10,7 @@ import AddAdvanceSalary from "./components/AddInformations/AddAdvanceSalary";
 import AddBanks from "./components/AddInformations/AddBanks";
 import AddCategories from "./components/AddInformations/AddCategories";
 import AddLoanAccount from "./components/AddInformations/AddLoanAccount";
+import AddProfitAccounts from "./components/AddInformations/AddProfitAccounts";
 import AddSubCategories from "./components/AddInformations/AddSubCategories";
 import AddLoan from "./components/AddLoan/AddLoan";
 import AddSalary from "./components/AddSalary/AddSalary";
@@ -43,10 +45,12 @@ function App() {
           <Route path="addexpense" element={<AddExpense />}></Route>
           <Route path="addloan" element={<AddLoan />}></Route>
           <Route path="addsalary" element={<AddSalary />}></Route>
+          <Route path="adddeposit" element={<AddBankDeposit />}></Route>
           <Route path="addcheque" element={<AddCheques />}></Route>
           <Route path="addcash" element={<AddCash />}></Route>
           <Route path="addcategories" element={<AddCategories />}></Route>
           <Route path="addsubcategories" element={<AddSubCategories />}></Route>
+          <Route path="addprofits" element={<AddProfitAccounts />}></Route>
           <Route path="addbank" element={<AddBanks />}></Route>
           <Route path="addaccounts" element={<AddAccounts />}></Route>
           <Route path="allexpenses" element={<AllExpenses />}></Route>

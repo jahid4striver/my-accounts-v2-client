@@ -78,7 +78,7 @@ const BankStatement = () => {
                 setOpening(openingBalance)
             })
     }
-    const openingBl = parseInt(opening[0].opening);
+    const openingBl = parseInt(opening[0]?.opening);
     const totalDeposit = bankDeposit.reduce((total, currentValue) => total + parseInt(currentValue.chequeamount), 0);
     const totalWithdraw = bankWithdraw.reduce((total, currentValue) => total + parseInt(currentValue.amount), 0);
     const closingBalance = openingBl + totalDeposit - totalWithdraw;
