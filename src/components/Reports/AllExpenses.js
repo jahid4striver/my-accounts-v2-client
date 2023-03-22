@@ -9,7 +9,7 @@ const AllExpenses = () => {
     const [updateExp, setUpdateExp] = useState(null);
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/dailyledger`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
             .then(res => res.json())
             .then(data => {
                 setAllExpenses(data)

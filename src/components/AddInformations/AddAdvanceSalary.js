@@ -8,7 +8,7 @@ const AddAdvanceSalary= () => {
     const [salary, setSalary] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/advancesalary')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/advancesalary')
             .then(res => res.json())
             .then(data => {
                 setSalary(data);
@@ -22,7 +22,7 @@ const AddAdvanceSalary= () => {
 
     const onSubmit = data => {
 
-        fetch('https://my-accounts.onrender.com/advancesalary', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/advancesalary', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddAdvanceSalary= () => {
     const handleDeleteAdvanceSalary = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://my-accounts.onrender.com/advancesalary/${id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/advancesalary/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

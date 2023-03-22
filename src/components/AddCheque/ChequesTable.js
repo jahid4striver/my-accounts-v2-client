@@ -13,7 +13,7 @@ const ChequesTable = ({cheque, setUpdateCheque, index}) => {
         const proceed= window.confirm('Ary You Sure Want To Delete')
 
         if(proceed){
-            fetch(`https://my-accounts.onrender.com/chequeledger/${_id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/chequeledger/${_id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

@@ -30,7 +30,7 @@ const DepositField = ({ date }) => {
     const formatedDate = format(date, "yyyy-MM-dd");
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/deposits`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/deposits`)
             .then(res => res.json())
             .then(data => {
                 setDeposits(data)
@@ -38,7 +38,7 @@ const DepositField = ({ date }) => {
     }, [deposits, setDeposits, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/deposits`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/deposits`)
             .then(res => res.json())
             .then(data => {
                 setAllDeposits(data)
@@ -46,7 +46,7 @@ const DepositField = ({ date }) => {
     }, [deposits, setDeposits, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/accounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/accounts')
             .then(res => res.json())
             .then(data => {
                 const onlyAccounts= data.filter(account=> !account.name.includes('Office Cash'))
@@ -54,7 +54,7 @@ const DepositField = ({ date }) => {
             })
     }, [])
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/profitAccounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/profitAccounts')
             .then(res => res.json())
             .then(data => {
                 setProfitAccounts(data)
@@ -63,7 +63,7 @@ const DepositField = ({ date }) => {
 
 
     const onSubmit = (data) => {
-        fetch('https://my-accounts.onrender.com/deposits', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/deposits', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -12,7 +12,7 @@ const AllCash = () => {
 
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/dailycash`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailycash`)
             .then(res => res.json())
             .then(data => {
                 setAllCash(data)

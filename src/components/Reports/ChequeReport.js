@@ -7,14 +7,14 @@ const ChequeReport = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/categories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
             })
     }, [])
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/subcategories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data);
@@ -28,7 +28,7 @@ const ChequeReport = () => {
         const startDate = e.target.startDate.value;
         const endDate = e.target.endDate.value;
         // console.log(startDate, endDate);
-        const url = `https://my-accounts.onrender.com/filteredcheques?chequecategory=${category}&chequesubcategory=${subcategory}&startDate=${startDate}&endDate=${endDate}`
+        const url = `https://nbcaccounts.clearsoftwares.xyz/filteredcheques?chequecategory=${category}&chequesubcategory=${subcategory}&startDate=${startDate}&endDate=${endDate}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

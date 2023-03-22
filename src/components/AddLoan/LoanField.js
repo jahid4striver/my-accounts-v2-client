@@ -31,7 +31,7 @@ const LoanField = ({ date }) => {
     const formatedDate = format(date, "yyyy-MM-dd");
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/todayledger?date=${formatedDate}`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/todayledger?date=${formatedDate}`)
             .then(res => res.json())
             .then(data => {
                 setExpenses(data)
@@ -39,7 +39,7 @@ const LoanField = ({ date }) => {
     }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/dailyledger`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
             .then(res => res.json())
             .then(data => {
                 setAllExpenses(data)
@@ -47,7 +47,7 @@ const LoanField = ({ date }) => {
     }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/categories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data)
@@ -55,7 +55,7 @@ const LoanField = ({ date }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/subcategories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data)
@@ -63,7 +63,7 @@ const LoanField = ({ date }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/loanaccountsgiven')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/loanaccountsgiven')
             .then(res => res.json())
             .then(data => {
                 setLoanAccounts(data)
@@ -87,7 +87,7 @@ const LoanField = ({ date }) => {
 
 // console.log(alldata);
 
-        fetch('https://my-accounts.onrender.com/dailyledger', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/dailyledger', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -108,11 +108,12 @@ const LoanField = ({ date }) => {
 
     return (
         <div className='shadow-2xl px-12 my-5'>
-            <form onSubmit={handleSubmit(onSubmit)} className='p-5 grid grid-cols-1 md:gird-cols-3 lg:grid-cols-7 gap-4 justify-items-center'>
+            <form onSubmit={handleSubmit(onSubmit)} className='p-5 grid grid-cols-1 md:gird-cols-3 lg:grid-cols-8 gap-4 justify-items-center'>
                 <input {...register("sl")} type="text" value={allExpenses.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
                 <input {...register("date")} type="text" value={formatedDate} class="input input-bordered w-full max-w-xs" required />
+                <input {...register("pageno")} type="text" placeholder='Enter Page No' class="input input-bordered w-full max-w-xs" required />
                 <select {...register("expense")} defaultValue='' class="select select-bordered w-full max-w-xs" required>
-                    <option selected>Select Category</option>
+                    <option selected>Select Loan Account</option>
                     {
                         loanAccounts.map(loan => <option>{loan.name}</option>)
                     }

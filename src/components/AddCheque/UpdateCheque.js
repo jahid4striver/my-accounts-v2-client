@@ -10,7 +10,7 @@ const UpdateCheque = ({ updateCheque, setUpdateCheque }) => {
 
 
     const onSubmit = (data) => {
-        fetch(`https://my-accounts.onrender.com/chequeledger/${_id}`, {
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/chequeledger/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

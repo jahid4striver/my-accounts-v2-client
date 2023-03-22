@@ -10,6 +10,7 @@ import AddAdvanceSalary from "./components/AddInformations/AddAdvanceSalary";
 import AddBanks from "./components/AddInformations/AddBanks";
 import AddCategories from "./components/AddInformations/AddCategories";
 import AddLoanAccount from "./components/AddInformations/AddLoanAccount";
+import AddLoanTakenAccount from "./components/AddInformations/AddLoanTakenAccounts";
 import AddProfitAccounts from "./components/AddInformations/AddProfitAccounts";
 import AddSubCategories from "./components/AddInformations/AddSubCategories";
 import AddLoan from "./components/AddLoan/AddLoan";
@@ -28,6 +29,7 @@ import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
 import ChequeReport from "./components/Reports/ChequeReport";
 import CurrentBalance from "./components/Reports/CurrentBalance";
 import IncomeExpense from "./components/Reports/IncomeExpense";
+import LoanBalanceSheet from "./components/Reports/LoanBalanceSheet";
 import LoanGivenReport from "./components/Reports/LoanGivenReport";
 import Navbar from "./components/Shared/Navbar";
 
@@ -58,6 +60,8 @@ function App() {
           <Route path="categorywisereport" element={<CategoryWiseReport />}></Route>
           <Route path="bankstatement" element={<BankStatement />}></Route>
           <Route path="addloangiven" element={<AddLoanAccount />}></Route>
+          <Route path="addloantaken" element={<AddLoanTakenAccount />}></Route>
+          <Route path="addloantaken" element={<AddLoanTakenAccount />}></Route>
           <Route path="addsalarygiven" element={<AddAdvanceSalary />}></Route>
           <Route path="cashstatement" element={<CashStatement />}></Route>
           <Route path="incomeexpense" element={<IncomeExpense />}></Route>
@@ -66,6 +70,7 @@ function App() {
           <Route path="chequereport" element={<ChequeReport />}></Route>
           <Route path="myexpenses" element={<MyExpenses />}></Route>
           <Route path="currentbalance" element={<CurrentBalance />}></Route>
+          <Route path="loanbalance" element={<LoanBalanceSheet />}></Route>
         </Route>
       </Routes>
 

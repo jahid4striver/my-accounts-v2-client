@@ -30,7 +30,7 @@ const ExpenseField = ({ date }) => {
     const formatedDate = format(date, "yyyy-MM-dd");
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/todayledger?date=${formatedDate}`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/todayledger?date=${formatedDate}`)
             .then(res => res.json())
             .then(data => {
                 setExpenses(data)
@@ -38,7 +38,7 @@ const ExpenseField = ({ date }) => {
     }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/dailyledger`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
             .then(res => res.json())
             .then(data => {
                 setAllExpenses(data)
@@ -46,7 +46,7 @@ const ExpenseField = ({ date }) => {
     }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/categories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data)
@@ -54,7 +54,7 @@ const ExpenseField = ({ date }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/subcategories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data)
@@ -66,7 +66,7 @@ const ExpenseField = ({ date }) => {
 
 
     const onSubmit = (data) => {
-        fetch('https://my-accounts.onrender.com/dailyledger', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/dailyledger', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

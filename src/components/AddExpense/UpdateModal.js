@@ -10,7 +10,7 @@ const UpdateModal = ({ updateExp, setUpdateExp }) => {
 
 
     const onSubmit = (data) => {
-        fetch(`https://my-accounts.onrender.com/dailyledger/${_id}`, {
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

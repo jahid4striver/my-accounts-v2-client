@@ -10,7 +10,7 @@ const UpdateModal = ({ updateExp, setUpdateExp }) => {
 
 
     const onSubmit = (data) => {
-        fetch(`https://my-accounts.onrender.com/dailyledger/${_id}`, {
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -69,13 +69,7 @@ const UpdateModal = ({ updateExp, setUpdateExp }) => {
                                 <span class="label-text">Description</span>
                             </label>
                             <input {...register("description")} defaultValue={description} type="text" placeholder="Description" class="input input-bordered w-full max-w-xs" />
-                        </div>
-
-
-                        
-                       
-                       
-                        
+                        </div>                        
                         <input type='submit' value='Update Expense' className='btn btn-primary' />
                     </form>
                 </div>

@@ -11,7 +11,7 @@ const CashTable = ({cash, setUpdateCash, index}) => {
         const proceed= window.confirm('Ary You Sure Want To Delete')
 
         if(proceed){
-            fetch(`https://my-accounts.onrender.com/dailycash/${cash._id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/dailycash/${cash._id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

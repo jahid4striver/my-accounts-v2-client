@@ -29,7 +29,7 @@ const ChequeField = ({ today }) => {
 
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/chequeledger`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/chequeledger`)
             .then(res => res.json())
             .then(data => {
                 setAllCheques(data)
@@ -37,7 +37,7 @@ const ChequeField = ({ today }) => {
     }, [allCheques, setAllCheques, updateCheque, setUpdateCheque, today])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/categories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data)
@@ -45,14 +45,14 @@ const ChequeField = ({ today }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/subcategories')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/subcategories')
             .then(res => res.json())
             .then(data => {
                 setSubCategories(data)
             })
     }, [])
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/banks')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/banks')
             .then(res => res.json())
             .then(data => {
                 setBanks(data)
@@ -60,7 +60,7 @@ const ChequeField = ({ today }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/accounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/accounts')
             .then(res => res.json())
             .then(data => {
                 setAccounts(data)
@@ -72,7 +72,7 @@ const ChequeField = ({ today }) => {
 
 
     const onSubmit = (data) => {
-        fetch('https://my-accounts.onrender.com/chequeledger', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/chequeledger', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

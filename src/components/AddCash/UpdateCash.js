@@ -10,7 +10,7 @@ const UpdateCash = ({ updateCash, setUpdateCash }) => {
 
 
     const onSubmit = (data) => {
-        fetch(`https://my-accounts.onrender.com/dailycash/${_id}`, {
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailycash/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

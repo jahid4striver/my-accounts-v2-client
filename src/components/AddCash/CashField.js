@@ -22,7 +22,7 @@ const CashField = ({ date }) => {
     const formatedDate = format(date, "yyyy-MM-dd");
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/todaycash?date=${formatedDate}`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/todaycash?date=${formatedDate}`)
             .then(res => res.json())
             .then(data => {
                 setCashes(data)
@@ -30,7 +30,7 @@ const CashField = ({ date }) => {
     }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
 
     useEffect(() => {
-        fetch(`https://my-accounts.onrender.com/dailycash`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailycash`)
             .then(res => res.json())
             .then(data => {
                 setAllCash(data)
@@ -38,7 +38,7 @@ const CashField = ({ date }) => {
     }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/accounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/accounts')
             .then(res => res.json())
             .then(data => {
                 setBanks(data)
@@ -46,7 +46,7 @@ const CashField = ({ date }) => {
     }, [])
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/loanaccounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/loanaccounts')
             .then(res => res.json())
             .then(data => {
                 setLoans(data)
@@ -67,7 +67,7 @@ const CashField = ({ date }) => {
         // const newData = { sl, date, account, amount, description };
 
 
-        fetch('https://my-accounts.onrender.com/dailycash', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/dailycash', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

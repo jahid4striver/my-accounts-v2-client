@@ -8,7 +8,7 @@ const AddProfitAccounts = () => {
     const [profitAccounts, setProfitAccounts] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/profitAccounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/profitAccounts')
             .then(res => res.json())
             .then(data => {
                 setProfitAccounts(data);
@@ -22,7 +22,7 @@ const AddProfitAccounts = () => {
 
     const onSubmit = data => {
 
-        fetch('https://my-accounts.onrender.com/profitAccounts', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/profitAccounts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddProfitAccounts = () => {
     const handleDeleteSubCategory = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://my-accounts.onrender.com/profitAccounts/${id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/profitAccounts/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

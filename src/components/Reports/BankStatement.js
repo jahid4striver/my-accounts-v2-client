@@ -54,7 +54,7 @@ const BankStatement = () => {
 
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/accounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/accounts')
             .then(res => res.json())
             .then(data => {
                 setBankName(data);
@@ -65,7 +65,7 @@ const BankStatement = () => {
         e.preventDefault();
         const bankName = e.target.bankName.value;
         // const loanReturn = category.slice(0, -6);
-        const url = `https://my-accounts.onrender.com/chequeledger`;
+        const url = `https://nbcaccounts.clearsoftwares.xyz/chequeledger`;
 
         fetch(url)
             .then(res => res.json())
@@ -74,7 +74,7 @@ const BankStatement = () => {
                 setBankDeposit(onlyBankDeposit)
                 setIsLoaded(true)
             })
-        const url2 = `https://my-accounts.onrender.com/loanreturnreport`
+        const url2 = `https://nbcaccounts.clearsoftwares.xyz/loanreturnreport`
 
         fetch(url2)
             .then(res => res.json())
@@ -83,7 +83,7 @@ const BankStatement = () => {
                 setBankWithdraw(onlyBankWithdraw)
             })
 
-        const url3 = `https://my-accounts.onrender.com/deposits`
+        const url3 = `https://nbcaccounts.clearsoftwares.xyz/deposits`
         fetch(url3)
             .then(res => res.json())
             .then(data => {
@@ -91,7 +91,7 @@ const BankStatement = () => {
                 console.log(onlyCashDeposits);
                 setCashDeposit(onlyCashDeposits)
             })
-        const url4 = `https://my-accounts.onrender.com/accounts`
+        const url4 = `https://nbcaccounts.clearsoftwares.xyz/accounts`
         fetch(url4)
             .then(res => res.json())
             .then(data => {

@@ -8,7 +8,7 @@ const AddBanks= () => {
     const [banks, setBanks] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/banks')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/banks')
             .then(res => res.json())
             .then(data => {
                 setBanks(data);
@@ -22,7 +22,7 @@ const AddBanks= () => {
 
     const onSubmit = data => {
 
-        fetch('https://my-accounts.onrender.com/banks', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/banks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddBanks= () => {
     const handleDeleteBank = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://my-accounts.onrender.com/banks/${id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/banks/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

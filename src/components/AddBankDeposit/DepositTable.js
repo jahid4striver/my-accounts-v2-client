@@ -11,7 +11,7 @@ const DepositTable = ({deposit, setUpdateExp, index}) => {
         const proceed= window.confirm('Ary You Sure Want To Delete')
 
         if(proceed){
-            fetch(`https://my-accounts.onrender.com/deposits/${deposit._id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/deposits/${deposit._id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

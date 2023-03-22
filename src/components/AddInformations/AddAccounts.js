@@ -8,7 +8,7 @@ const AddAccounts = () => {
     const [accounts, setAccounts] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/accounts')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/accounts')
             .then(res => res.json())
             .then(data => {
                 setAccounts(data);
@@ -22,7 +22,7 @@ const AddAccounts = () => {
 
     const onSubmit = data => {
 
-        fetch('https://my-accounts.onrender.com/accounts', {
+        fetch('https://nbcaccounts.clearsoftwares.xyz/accounts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddAccounts = () => {
     const handleDeleteAccount = (id) => {
         const proceed = window.confirm('Are You Sure Want To Delete')
         if (proceed) {
-            fetch(`https://my-accounts.onrender.com/accounts/${id}`, {
+            fetch(`https://nbcaccounts.clearsoftwares.xyz/accounts/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

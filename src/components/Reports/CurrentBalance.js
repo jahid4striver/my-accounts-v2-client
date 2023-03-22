@@ -9,7 +9,7 @@ const CurrentBalance = () => {
     const [accounts, setAccounts]= useState([]);
 
 
-    const { data: bankAccounts, isLoading } = useQuery(['accounts'], () => fetch('https://my-accounts.onrender.com/accounts').then(res => res.json()));
+    const { data: bankAccounts, isLoading } = useQuery(['accounts'], () => fetch('https://nbcaccounts.clearsoftwares.xyz/accounts').then(res => res.json()));
 
 
     // if(user.email=='hameem@myaccounts.com'){
@@ -24,7 +24,7 @@ const CurrentBalance = () => {
     const handleBalance=(ac)=>{
         const underscore =ac.name.replace(/ /g,"_");
 
-        const url= `https://my-accounts.onrender.com/accountsbalance?account=${underscore}`
+        const url= `https://nbcaccounts.clearsoftwares.xyz/accountsbalance?account=${underscore}`
         console.log(url);
         fetch(url)
         .then(res=> res.json())
@@ -38,7 +38,7 @@ const CurrentBalance = () => {
 
 
     // useEffect(() => {
-    //     fetch('https://my-accounts.onrender.com/banks')
+    //     fetch('https://nbcaccounts.clearsoftwares.xyz/banks')
     //         .then(res => res.json())
     //         .then(data => {
     //             setBanks(data);

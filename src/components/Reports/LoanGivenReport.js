@@ -20,7 +20,7 @@ const LoanGivenReport = () => {
 
 
     useEffect(() => {
-        fetch('https://my-accounts.onrender.com/loanaccountsgiven')
+        fetch('https://nbcaccounts.clearsoftwares.xyz/loanaccountsgiven')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -36,7 +36,7 @@ const LoanGivenReport = () => {
         const loanReturn = category.slice(0, -6);
         console.log(loanReturn);
         // const withoutSpace=category.replace(/ /g,"_");
-        const url = `https://my-accounts.onrender.com/dailyledger`;
+        const url = `https://nbcaccounts.clearsoftwares.xyz/dailyledger`;
 
         fetch(url)
             .then(res => res.json())
@@ -46,7 +46,7 @@ const LoanGivenReport = () => {
                 setFilteredExpense(onlyLoanGiven)
                 setIsLoaded(true)
             })
-        const url2 = `https://my-accounts.onrender.com/loanreturnreport`
+        const url2 = `https://nbcaccounts.clearsoftwares.xyz/loanreturnreport`
 
         fetch(url2)
             .then(res => res.json())
@@ -95,7 +95,7 @@ const LoanGivenReport = () => {
     // })
     // console.log();
 
-    // const url2= `https://my-accounts.onrender.com/expenseamount?category=${category}$subcategory=${subcategory}`
+    // const url2= `https://nbcaccounts.clearsoftwares.xyz/expenseamount?category=${category}$subcategory=${subcategory}`
 
 
 

@@ -25,7 +25,7 @@ const MyExpenses = () => {
 
 
     if (user?.email == 'hameem@myaccounts.com') {
-        fetch(`https://my-accounts.onrender.com/myexpenses?category=Construction&subcategory=Hameem`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/myexpenses?category=Construction&subcategory=Hameem`)
             .then(res => res.json())
             .then(data => {
                 setMyExpenses(data)
@@ -33,7 +33,7 @@ const MyExpenses = () => {
             })
     }
     if (user?.email == 'owner@myaccounts.com') {
-        fetch(`https://my-accounts.onrender.com/ownerexpenses?category=Personal`)
+        fetch(`https://nbcaccounts.clearsoftwares.xyz/ownerexpenses?category=Personal`)
             .then(res => res.json())
             .then(data => {
                 setMyExpenses(data)
@@ -46,7 +46,7 @@ const MyExpenses = () => {
     }
 
     // useEffect(() => {
-    //     fetch(`https://my-accounts.onrender.com/ownerexpenses?category=${owner}`)
+    //     fetch(`https://nbcaccounts.clearsoftwares.xyz/ownerexpenses?category=${owner}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setMyExpenses(data)
@@ -54,7 +54,7 @@ const MyExpenses = () => {
     // }, [myExpenses, setMyExpenses, owner])
 
     // useEffect(() => {
-    //     fetch(`https://my-accounts.onrender.com/myexpenses?category=${category}&subcategory=${subCategory}`)
+    //     fetch(`https://nbcaccounts.clearsoftwares.xyz/myexpenses?category=${category}&subcategory=${subCategory}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setMyExpenses(data)
