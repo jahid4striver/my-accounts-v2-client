@@ -25,6 +25,7 @@ import AllCash from "./components/Reports/AllCash";
 import AllExpenses from "./components/Reports/AllExpenses";
 import BankStatement from "./components/Reports/BankStatement";
 import CashStatement from "./components/Reports/CashStatement";
+import CategoryWiseBalance from "./components/Reports/CategoryWiseBalance";
 import CategoryWiseReport from "./components/Reports/CategoryWiseReport";
 import ChequeReport from "./components/Reports/ChequeReport";
 import CurrentBalance from "./components/Reports/CurrentBalance";
@@ -70,6 +71,7 @@ function App() {
           <Route path="chequereport" element={<ChequeReport />}></Route>
           <Route path="myexpenses" element={<MyExpenses />}></Route>
           <Route path="currentbalance" element={<CurrentBalance />}></Route>
+          <Route path="categorywisebalance" element={<CategoryWiseBalance />}></Route>
           <Route path="loanbalance" element={<LoanBalanceSheet />}></Route>
         </Route>
       </Routes>

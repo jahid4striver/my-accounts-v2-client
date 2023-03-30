@@ -91,30 +91,9 @@ const LoanBalanceSheet = () => {
         return <Loading></Loading>
     }
 
-    const handleBalance = (ac) => {
-        const underscore = ac.name.replace(/ /g, "_");
-
-        const url = `https://nbcaccounts.clearsoftwares.xyz/accountsbalance?account=${underscore}`
-        console.log(url);
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setAccounts(data)
-                console.log(data);
-            })
-    }
 
     const totalBalance = data.reduce((total, currentValue) => total + parseInt(currentValue.balance), 0);
 
-
-    // useEffect(() => {
-    //     fetch('https://nbcaccounts.clearsoftwares.xyz/banks')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setBanks(data);
-    //             console.log(data);
-    //         })
-    // }, [banks, setBanks])
     return (
         <div>
             <h1 className='text-center text-xl mt-8'>Loan Balance Sheet</h1>
