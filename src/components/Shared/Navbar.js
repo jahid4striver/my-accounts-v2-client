@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../Authentication/firebase.init';
+import { MdManageAccounts } from 'react-icons/md';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -37,7 +38,7 @@ const Navbar = () => {
                 </label>
             </div>
             <div class="flex-1">
-                <Link to='/' class="btn btn-ghost text-xl uppercase font-bold mr-36">My Accounts</Link>
+                <Link to='/' class="btn btn-ghost text-xl uppercase font-bold mr-36"><MdManageAccounts className='text-3xl'/>My Accounts</Link>
             </div>
             <div class="flex-none">
                 <div class="dropdown dropdown-end indicator">
