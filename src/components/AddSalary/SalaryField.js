@@ -12,7 +12,7 @@ import UpdateSalary from './UpdateSalary';
 const SalaryField = ({ date }) => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
 
-    const [allExpenses, setAllExpenses] = useState([]);
+    // const [allExpenses, setAllExpenses] = useState([]);
     const [expenses, setExpenses] = useState([]);
     const [categories, setCategories] = useState([]);
     const [subCategories, setSubCategories] = useState([]);
@@ -38,13 +38,13 @@ const SalaryField = ({ date }) => {
             })
     }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
-    useEffect(() => {
-        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
-            .then(res => res.json())
-            .then(data => {
-                setAllExpenses(data)
-            })
-    }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
+    // useEffect(() => {
+    //     fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAllExpenses(data)
+    //         })
+    // }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
         fetch('https://nbcaccounts.clearsoftwares.xyz/categories')
@@ -109,7 +109,7 @@ const SalaryField = ({ date }) => {
     return (
         <div className='shadow-2xl px-12 my-5'>
             <form onSubmit={handleSubmit(onSubmit)} className='p-5 grid grid-cols-1 md:gird-cols-3 lg:grid-cols-7 gap-4 justify-items-center'>
-                <input {...register("sl")} type="text" value={allExpenses.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
+                <input {...register("sl")} type="text" value={expenses.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
                 <input {...register("date")} type="text" value={formatedDate} class="input input-bordered w-full max-w-xs" required />
                 <select {...register("expense")} defaultValue='' class="select select-bordered w-full max-w-xs" required>
                     <option selected>Select Category</option>

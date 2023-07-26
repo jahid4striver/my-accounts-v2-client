@@ -12,7 +12,7 @@ import UpdateModal from './UpdateModal';
 const ExpenseField = ({ date }) => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
 
-    const [allExpenses, setAllExpenses] = useState([]);
+    // const [allExpenses, setAllExpenses] = useState([]);
     const [expenses, setExpenses] = useState([]);
     const [categories, setCategories] = useState([]);
     const [subCategories, setSubCategories] = useState([]);
@@ -37,13 +37,13 @@ const ExpenseField = ({ date }) => {
             })
     }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
-    useEffect(() => {
-        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
-            .then(res => res.json())
-            .then(data => {
-                setAllExpenses(data)
-            })
-    }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
+    // useEffect(() => {
+    //     fetch(`https://nbcaccounts.clearsoftwares.xyz/dailyledger`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAllExpenses(data)
+    //         })
+    // }, [expenses, setExpenses, updateExp, setUpdateExp, formatedDate])
 
     useEffect(() => {
         fetch('https://nbcaccounts.clearsoftwares.xyz/categories')
@@ -78,6 +78,7 @@ const ExpenseField = ({ date }) => {
                 console.log(data);
                 toast.success('Expense Added Successful')
                 reset();
+                // setTimeout( window.location.reload() , 3000)
 
             })
     }
@@ -88,7 +89,7 @@ const ExpenseField = ({ date }) => {
     return (
         <div className='shadow-2xl px-12 my-5'>
             <form onSubmit={handleSubmit(onSubmit)} className='p-5 grid grid-cols-1 md:gird-cols-3 lg:grid-cols-7 gap-4 justify-items-center'>
-                <input {...register("sl")} type="text" value={allExpenses.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
+                <input {...register("sl")} type="text" value={expenses.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
                 <input {...register("date")} type="text" value={formatedDate} class="input input-bordered w-full max-w-xs" required />
                 <input {...register("expense")} type="text" placeholder="Expense Name" class="input input-bordered w-full max-w-xs" required />
 

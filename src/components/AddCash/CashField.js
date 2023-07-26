@@ -11,7 +11,7 @@ import UpdateCash from './UpdateCash';
 const CashField = ({ date }) => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
 
-    const [allCash, setAllCash] = useState([]);
+    // const [allCash, setAllCash] = useState([]);
     const [cashes, setCashes] = useState([]);
     const [banks, setBanks] = useState([]);
     const [loans, setLoans] = useState([]);
@@ -29,13 +29,13 @@ const CashField = ({ date }) => {
             })
     }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
 
-    useEffect(() => {
-        fetch(`https://nbcaccounts.clearsoftwares.xyz/dailycash`)
-            .then(res => res.json())
-            .then(data => {
-                setAllCash(data)
-            })
-    }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
+    // useEffect(() => {
+    //     fetch(`https://nbcaccounts.clearsoftwares.xyz/dailycash`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAllCash(data)
+    //         })
+    // }, [cashes, setCashes, updateCash, setUpdateCash, formatedDate])
 
     useEffect(() => {
         fetch('https://nbcaccounts.clearsoftwares.xyz/accounts')
@@ -94,7 +94,7 @@ const CashField = ({ date }) => {
                     <label class="label">
                         <span class="label-text">SL#</span>
                     </label>
-                    <input {...register("sl")} type="text" value={allCash.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
+                    <input {...register("sl")} type="text" value={cashes.length + 1} class="input text-center input-bordered w-full max-w-xs" required />
                 </div>
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
